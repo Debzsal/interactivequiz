@@ -48,18 +48,28 @@ function displayOptions() {
 
         choicelist.addEventListener("click", showme);
 
-        function showme() {
+        function showme(event) {
+            li2 = event.target
+            console.log(li2);
+            li2.innerHTML
+        
 
-            for( x = 2 ; x < questions.length; x++){
-                console.log(questions[x])
+            for( x = 0 ; x < questions.length; x++){
+                
             }
-            if(choicelist === questions[x]) {
+            // this is defining
+            console.log(questions[0].answer);
+
+            if(li2.innerHTML === questions[0].answer) {
                 alert("Correct!");
             }
             else {
                 alert("Wrong");   
         }
-        
+    }
+}
+        // innerhtml 
+        // event.target
 
         // var btn = document.getElementsByTagName("button").type;
         // for (i = 0; i< choices.children.length; i++) {
@@ -70,8 +80,8 @@ function displayOptions() {
         // choices.setAttribute("type", "button");
         
     }
-}
-}
+
+
 //     add click to buttons = choicelist.addEventListener("click", showme);
     
     // function showme() {
