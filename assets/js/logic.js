@@ -33,7 +33,6 @@ function displayOptions() {
     for( q = 0; q < questions.length; q++) {
         console.log(questions[q]);
 
-        // var choices = document.getElementsByClassName("choices button");
         var choicelist = document.getElementById("choices");
         var li1 = document.createElement("button");
         var li2 = document.createElement("button");
@@ -47,6 +46,21 @@ function displayOptions() {
         li2.textContent = questions[q].options[1];
         li3.textContent = questions[q].options[2];
 
+        choicelist.addEventListener("click", showme);
+
+        function showme() {
+
+            for( x = 2 ; x < questions.length; x++){
+                console.log(questions[x])
+            }
+            if(choicelist === questions[x]) {
+                alert("Correct!");
+            }
+            else {
+                alert("Wrong");   
+        }
+        
+
         // var btn = document.getElementsByTagName("button").type;
         // for (i = 0; i< choices.children.length; i++) {
         //         choices.children[i].setAttribute("type", "button");
@@ -57,7 +71,15 @@ function displayOptions() {
         
     }
 }
-//     addbutton();
+}
+//     add click to buttons = choicelist.addEventListener("click", showme);
+    
+    // function showme() {
+    //     if(answer = alert ("Correct!"));
+    //         else alert("Wrong");
+
+
+
 // }
 
 // function addbutton() {
@@ -135,11 +157,7 @@ function displayOptions() {
     //  btn.appendChild(choices);   
     // }
     //  => {
-    // choices.addEventListener("click", showme);
-    
-    // function showme() {
-    //     if(answer = alert ("Correct!"));
-    //         else alert("Wrong");
+    // 
     // }
     // });
 
