@@ -2,6 +2,9 @@ var startEl = document.getElementById("start");
 var hide =  document.getElementsByClassName("hide");
 var questionspage = document.getElementById("questions");
 var startscreen = document.getElementById("start-screen");
+var timerEl = document.getElementById("time");
+
+
 
 
 startEl.addEventListener("click", myfunction);
@@ -16,7 +19,34 @@ function myfunction() {
 questionspage.removeAttribute("class");
 
 displayquestions();
-}
+
+function countdown() {
+
+    var timeLeft = 75;
+
+    var timeInterval = setInterval(function () {
+        if(timeLeft > 1) {
+            // Set the `textContent` of `timerEl` to show the remaining seconds
+            timerEl.textContent = timeLeft;
+            timeLeft--;
+
+        } else if (displaymessage("Wrong")) {
+            timeLeft -10000;
+        
+        } else {
+                // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+                timerEl.textContent = '';
+                // Use `clearInterval()` to stop the timer
+                clearInterval(timeInterval);
+            }
+
+            countdown();
+            75000);
+        }
+    }
+
+
+
 
 function displayquestions() {
     for( i = 0; i < questions.length; i++) {
