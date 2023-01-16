@@ -37,10 +37,12 @@ function displayOptions() {
         var li1 = document.createElement("button");
         var li2 = document.createElement("button");
         var li3 = document.createElement("button");
+        var heading = document.createElement("h2");
         
         choicelist.appendChild(li1);
         choicelist.appendChild(li2);
         choicelist.appendChild(li3);
+        choicelist.appendChild(heading);
    
         li1.textContent = questions[q].options[0];
         li2.textContent = questions[q].options[1];
@@ -68,7 +70,7 @@ function displayOptions() {
         }
 
         function displaymessage( message) {
-            choicelist.textContent = message;
+            heading.textContent = message;
             
         }
     }
