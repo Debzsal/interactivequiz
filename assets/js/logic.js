@@ -24,7 +24,7 @@ function countdown() {
 
     var timeLeft = 75;
 
-    var timeInterval = setInterval(function () {
+    var timeInterval = setInterval(function ()  {
         if(timeLeft > 1) {
             // Set the `textContent` of `timerEl` to show the remaining seconds
             timerEl.textContent = timeLeft;
@@ -40,11 +40,13 @@ function countdown() {
                 clearInterval(timeInterval);
             }
 
-            countdown();
-            75000);
-        }
-    }
+        },
 
+            
+            
+        75000);
+    }
+}
 
 
 
@@ -103,6 +105,7 @@ function displayOptions() {
             heading.textContent = message;
             
         }
+        countdown();
     }
 }
     }
