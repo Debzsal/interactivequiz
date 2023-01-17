@@ -36,18 +36,10 @@ function clockTick() {
     timerEl.textContent = timeLeft;
 
     // check if user ran out of time
-    if (timeLeft <= 0) {
-        console.log("time up")
+    if (timeLeft === 0) {
+        clearInterval(timerInterval);
     } 
     
-    function displaymessage( message) {
-        heading.textContent = message;
-        console.log(displaymessage);
-
-
-    } if (displaymessage("Wrong")) {
-        timeLeft --;15000
-    }
 }
 
 
@@ -130,7 +122,7 @@ function displayOptions() {
                 displaymessage("Correct!");
             }
             else {
-                displaymessage("Wrong");   
+                displaymessage("Wrong"); timeLeft -150000; 
         }
 
         function displaymessage( message) {
