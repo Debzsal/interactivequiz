@@ -8,6 +8,7 @@ The motivation for this project was to create a timed quiz that showcases the ja
 ## Usage 
 The project can be used by clicking on the project URL in order to access and navigate through the quiz. There is a 75 seconds timer which ends are 0 seconds.
 
+https://debzsal.github.io/interactivequiz/
 
 
 ## Credits
