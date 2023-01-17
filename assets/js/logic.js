@@ -3,6 +3,9 @@ var hide =  document.getElementsByClassName("hide");
 var questionspage = document.getElementById("questions");
 var startscreen = document.getElementById("start-screen");
 var timerEl = document.getElementById("time");
+var timeLeft = 75;
+var timerId;
+var heading = document.createElement("h2");
 
 
 
@@ -18,37 +21,65 @@ function myfunction() {
 // questionsEl.style.display = "none";
 questionspage.removeAttribute("class");
 
+timerId = setInterval(clockTick, 1000);
+
+timerEl.textContent = timeLeft
+
 displayquestions();
+  
 
-function countdown() {
+}
 
-    var timeLeft = 75;
+function clockTick() {
+    // update time
+    timeLeft--;
+    timerEl.textContent = timeLeft;
 
-    var timeInterval = setInterval(function ()  {
-        if(timeLeft > 1) {
-            // Set the `textContent` of `timerEl` to show the remaining seconds
-            timerEl.textContent = timeLeft;
-            timeLeft--;
+    // check if user ran out of time
+    if (timeLeft <= 0) {
+        console.log("time up")
+    } 
+    
+    function displaymessage( message) {
+        heading.textContent = message;
+        console.log(displaymessage);
 
-        } else if (displaymessage("Wrong")) {
-            timeLeft -10000;
-        
-        } else {
-                // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-                timerEl.textContent = '';
-                // Use `clearInterval()` to stop the timer
-                clearInterval(timeInterval);
-            }
 
-        },
-
-            
-            
-        75000);
+    } if (displaymessage("Wrong")) {
+        timeLeft --;15000
     }
 }
 
-countdown();
+
+// function countdown() {
+
+//     var timeLeft = 75;
+
+//     var timeInterval = setInterval(function ()  {
+//         if(timeLeft > 1) {
+//             // Set the `textContent` of `timerEl` to show the remaining seconds
+//             timerEl.textContent = timeLeft;
+//             timeLeft--;
+
+//         } else if (displaymessage("Wrong")) {
+//             timeLeft -10000;
+        
+//         } else {
+//                 // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+//                 timerEl.textContent = '';
+//                 // Use `clearInterval()` to stop the timer
+//                 clearInterval(timeInterval);
+//             }
+
+//         },
+
+            
+            
+//         75000);
+//     }
+// }
+
+// countdown();
 
 
 function displayquestions() {
@@ -70,7 +101,7 @@ function displayOptions() {
         var li1 = document.createElement("button");
         var li2 = document.createElement("button");
         var li3 = document.createElement("button");
-        var heading = document.createElement("h2");
+        
         
         choicelist.appendChild(li1);
         choicelist.appendChild(li2);
@@ -106,7 +137,7 @@ function displayOptions() {
             heading.textContent = message;
             
         }
-        countdown();
+    
     }
 }
     }
