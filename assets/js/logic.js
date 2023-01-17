@@ -48,6 +48,7 @@ function countdown() {
     }
 }
 
+countdown();
 
 
 function displayquestions() {
